@@ -1,0 +1,10 @@
+---
+- name: Play against e.g. cirros
+  gather_facts: no
+  hosts: all
+  vars:
+  roles:
+  tasks:
+    - name: Raw module
+      raw: ls -ltr /
+
