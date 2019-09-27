@@ -1,0 +1,14 @@
+---
+# This playbook prints a simple debug message
+- name: Echo Hello, Pebbles and BamBam
+  hosts: localhost
+
+  tasks:
+  - name: "playbook3a - testing input vars"
+    set_stats:
+      data:
+        pb_var3a: "{{ input3a }}"
+        pb_var3b: "{{ input3b }}"
+
+  - debug: msg="Hello, {{ input3a }} and {{ input3b }}."
+  - debug: msg="Hello, Stat_vars from playbook2 are {{ pb_var2a }} and {{ pb_var2b }}."
