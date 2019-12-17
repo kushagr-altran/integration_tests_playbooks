@@ -5,10 +5,10 @@
     myvar: Centos
   tasks:
   - name: copy redhat-release
-    copy: remote_src=True src=/etc/redhat-release dest=/var/tmp/modified-release
+    copy: remote_src=True src=/etc/environment dest=/root/Ansible
 
-  - name: Change redhat string to something else
-    lineinfile: dest='/var/tmp/modified-release' regexp='^Red Hat(.*)' line='{{ myvar }}\1' backrefs=yes
+  #- name: Change redhat string to something else
+   # lineinfile: dest='/var/tmp/modified-release' regexp='^Red Hat(.*)' line='{{ myvar }}\1' backrefs=yes
     
 
 
