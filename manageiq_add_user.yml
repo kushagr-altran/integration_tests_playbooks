@@ -3,6 +3,7 @@
   hosts: all
   gather_facts: no
   vars:
+    manageiq_host: 10.18.57.58
     manageiq_user: admin
     manageiq_pass: smartvm
     manageiq_auth_url: "https://{{ manageiq_host }}/api/auth"
