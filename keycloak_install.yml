@@ -7,4 +7,5 @@
   - name: Download Keycloak
     sudo: true
     wait_for:
+      sleep:5
       action: shell sudo wget https://downloads.jboss.org/keycloak/8.0.1/gatekeeper/keycloak-gatekeeper-linux-amd64.tar.gz
