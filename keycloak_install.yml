@@ -6,6 +6,4 @@
     action: shell sudo mkdir -p /tmp/my_install/keycloak/ && cd /tmp/my_install/keycloak/
   - name: Download Keycloak
     sudo: true
-    wait_for:
-      sleep:5
-      action: shell sudo wget https://downloads.jboss.org/keycloak/8.0.1/gatekeeper/keycloak-gatekeeper-linux-amd64.tar.gz
+    action: shell sudo wget https://downloads.jboss.org/keycloak/8.0.1/gatekeeper/keycloak-gatekeeper-linux-amd64.tar.gz
