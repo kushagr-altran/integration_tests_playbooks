@@ -1,9 +1,7 @@
 ---
-- name: Creating empty file using Ansible playbook
-  hosts: all
-  user: root
+- hosts: all
   tasks:
-  - name: Ansible create file
+  - name: Ansible create file if it doesn't exist example
     file:
-      path: "~/test_ansible_file"
+      path: "/root/create_from_ansible.txt"
       state: touch
