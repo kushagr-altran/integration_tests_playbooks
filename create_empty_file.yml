@@ -2,6 +2,7 @@
 - hosts: all
   tasks:
   - name: Ansible create file if it doesn't exist example
+    ignore_errors: yes
     file:
-      path: "/root/create_from_ansible.txt"
+      path: "create_from_ansible.txt"
       state: touch
