@@ -3,6 +3,4 @@
   tasks:
   - name: Ansible create file if it doesn't exist example
     ignore_errors: yes
-    file:
-      path: "create_from_ansible.txt"
-      state: touch
+    action: shell touch /root/create_file_from_ansible.txt
