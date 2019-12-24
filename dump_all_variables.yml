@@ -1,7 +1,0 @@
----
-- name: Dump all variables known to Ansible/Tower and write them to stdout/file
-  hosts: all
-  vars:
-  roles:
-    - dump_all_variables
-
