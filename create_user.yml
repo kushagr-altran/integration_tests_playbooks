@@ -1,0 +1,6 @@
+- hosts: 10.18.57.52
+  tasks:
+  - name: Run a script using an executable in a system path
+    shell: |
+      cd /root/automation/REST_API/Testing_phase1/Sprint2 
+      robot --variable username:admin --variable password:smartvm --variable IP:10.18.57.58 --variable userid:kushagra --variable passwd:smartvm --variable name:kushagra user_create.robot
