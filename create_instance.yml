@@ -2,6 +2,7 @@
   tasks:
   - name: Run a script using an executable in a system path
     shell: |
+      cd /root/
       source /usr/bin/virtualenvwrapper.sh
       export WORKON_HOME=$HOME/.virtenvs
       mkvirtualenv os_cli
