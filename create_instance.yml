@@ -6,5 +6,9 @@
       source /usr/bin/virtualenvwrapper.sh
       export WORKON_HOME=$HOME/.virtenvs
       mkvirtualenv os_cli
-      source new_openrc.sh
-      openstack server create --flavor SmallTestFlavor --image cirros --network Network5 created_from_ansible --insecure
+  - pause:
+      seconds: 5
+  - name: Create instance from openstack
+    shell: openstack server create --flavor SmallTestFlavor --image cirros --network Network5 created_from_ansible --insecure      
+
+
