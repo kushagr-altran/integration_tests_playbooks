@@ -30,11 +30,11 @@
     - name: Create Virtual Machines
       vsphere_guest:
         validate_certs: no
-        vcenter_hostname: "{{ vcenter_hostname }}"
-        guest: "{{ inventory_hostname }}"
+      #  vcenter_hostname: "{{ vcenter_hostname }}"
+      #  guest: "{{ inventory_hostname }}"
         power_on_after_clone: no
         from_template: yes
-        template_src: "{{ template }}"
+      #  template_src: "{{ template }}"
       #  esxi:
       #    datacenter: "{{ datacenter }}"
       #    hostname: "{{ esxi_host }}"
@@ -42,8 +42,8 @@
     - name: Gather the facts for the VM
       vsphere_guest:
         validate_certs: no
-        vcenter_hostname: "{{ vcenter_hostname }}"
-        guest: "{{ inventory_hostname }}"
+      #  vcenter_hostname: "{{ vcenter_hostname }}"
+      #  guest: "{{ inventory_hostname }}"
         vmware_guest_facts: yes
       register: new_vm
 
@@ -88,7 +88,7 @@
       delay: "{{retry_interval}}"
     - debug: var=task_result
     
-    - set_fact: find_vm_url="{{ manageiq.api_url }}/api/vms?expand=resources&attributes=href,uid_ems&filter[]=uid_ems='{{ new_vm_uuid }}'"
+ #   - set_fact: find_vm_url="{{ manageiq.api_url }}/api/vms?expand=resources&attributes=href,uid_ems&filter[]=uid_ems='{{ new_vm_uuid }}'"
 
     - debug: var=find_vm_url
 
@@ -106,15 +106,15 @@
 
     - debug: var=token_output
 
-    - set_fact: cf_vm_href="{{ token_output.json.resources[0].href }}"
+ #   - set_fact: cf_vm_href="{{ token_output.json.resources[0].href }}"
 
     - debug: var=cf_vm_href
 
-    - name: Create an array of vms
-      set_fact:
-        vms: "{{ vms|default([]) + [ { 'href': svc_url, 'resource':  { 'href': item } } ] }}"
-      with_items:
-        - "{{ cf_vm_href }}"
+#    - name: Create an array of vms
+#      set_fact:
+#        vms: "{{ vms|default([]) + [ { 'href': svc_url, 'resource':  { 'href': item } } ] }}"
+#      with_items:
+#        - "{{ cf_vm_href }}"
 
     - debug: var=vms
     
