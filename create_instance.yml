@@ -2,6 +2,8 @@
 
 - name: Create instance
   hosts: localhost
+  vars:
+    catalog_id: catalog_id
   tasks:
   - name: Create Instance from api of service catalog 
     uri:
@@ -14,5 +16,6 @@
       force_basic_auth: yes
       status_code: 200
       body_format: json
+      debug: msg="{{catalog_id}}"
        
        
