@@ -1,0 +1,18 @@
+---
+
+- name: Delete instance
+  hosts: localhost
+  tasks:
+  - name: Delete Instance from API.
+    uri:
+      url: "https://10.18.57.58/api/instances/{{ instance_id }}"
+      validate_certs: False
+      user: admin
+      password: smartvm
+      method: POST
+      body: {"action": "terminate"}
+      force_basic_auth: yes
+      status_code: 200
+      body_format: json
+       
+       
