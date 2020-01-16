@@ -2,12 +2,10 @@
 
 - name: Create instance
   hosts: localhost
-  vars:
-    catalog_id: catalog_id
   tasks:
   - name: Create Instance from api of service catalog 
     uri:
-      url: "https://10.18.57.58/api/service_catalogs/1/service_templates/{{catalog_id}}"
+      url: "https://10.18.57.58/api/service_catalogs/1/service_templates/{{ catalog_id }}"
       validate_certs: False
       user: admin
       password: smartvm
