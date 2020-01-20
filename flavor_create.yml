@@ -1,0 +1,18 @@
+---
+
+- name: Flavor Creation
+  hosts: localhost
+  tasks:
+  - name: Create Flavor from API.
+    uri:
+      url: "https://10.18.57.58/api/providers/5/flavors"
+      validate_certs: False
+      user: admin
+      password: smartvm
+      method: POST
+      body: {"name": "Ansible_flavor", "cpu_cores":"4", "memory":"256", "root_disk_size":"10"}
+      force_basic_auth: yes
+      status_code: 200
+      body_format: json
+       
+       
