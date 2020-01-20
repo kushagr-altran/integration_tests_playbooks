@@ -1,0 +1,18 @@
+---
+
+- name: Add user
+  hosts: localhost
+  tasks:
+  - name: Add user from API.
+    uri:
+      url: "https://10.18.57.58/api/users"
+      validate_certs: False
+      user: admin
+      password: smartvm
+      method: POST
+      body: {"userid" : "kushagra","password" : "smartvm","name" : "kushagra","group" : { "id" : "11" }}
+      force_basic_auth: yes
+      status_code: 200
+      body_format: json
+       
+       
