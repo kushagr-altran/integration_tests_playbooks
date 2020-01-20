@@ -1,0 +1,18 @@
+---
+
+- name: Service Catalog Deletion
+  hosts: localhost
+  tasks:
+  - name: Delete Service Catalog from API.
+    uri:
+      url: "https://10.18.57.58/api/service_catalogs/{{ catalog_id }}"
+      validate_certs: False
+      user: admin
+      password: smartvm
+      method: Delete
+#      body: {"action":"delete"}
+      force_basic_auth: yes
+      status_code: 200
+      body_format: json
+       
+       
