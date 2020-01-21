@@ -1,0 +1,9 @@
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Download Keepalived
+    sudo: true
+    action: shell sudo wget http://www.keepalived.org/software/keepalived-1.1.19.tar.gz
+  - name: Unzipping keepalived folder
+    sudo: true
+    action: shell sudo tar -zxvf keepalived-1.1.19.tar.gz
