@@ -5,12 +5,12 @@
   tasks:
   - name: Add provider from API.
     uri:
-      url: "https://10.18.57.58/api/providers"
+      url: "https://{{ IP }}/api/providers"
       validate_certs: False
       user: admin
       password: smartvm
       method: POST
-      body: {"name": "Openstack", "type":"ManageIQ::Providers::Openstack::CloudManager", "ipaddress":"10.18.54.16","credentials":{"userid":"aricent","password":"aricent@123"}, "zone":{"href":"https://10.18.57.58/api/zones/1"}}
+      body: {"name": "Openstack", "type":"ManageIQ::Providers::Openstack::CloudManager", "ipaddress":"10.18.54.16","credentials":{"userid":"aricent","password":"aricent@123"}, "zone":{"href":"https://{{ IP }}/api/zones/1"}}
       force_basic_auth: yes
       status_code: 200
       body_format: json
