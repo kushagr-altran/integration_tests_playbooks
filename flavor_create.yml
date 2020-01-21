@@ -10,7 +10,7 @@
       user: admin
       password: smartvm
       method: POST
-      body: {"name": "Ansible_flavor", "cpu_cores":"4", "memory":"256", "root_disk_size":"10"}
+      body: {"name": "Ansible_flavor", "cpu_cores":"4", "memory":"100", "root_disk_size":"5"}
       force_basic_auth: yes
       status_code: 200
       body_format: json
