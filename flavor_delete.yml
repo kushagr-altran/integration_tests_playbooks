@@ -5,7 +5,7 @@
   tasks:
   - name: Delete Flavor from API.
     uri:
-      url: "https://10.18.57.58/api/providers/5/flavors/{{ flavor_id}}"
+      url: "https://10.18.57.58/api/providers/4/flavors/{{ flavor_id}}"
       validate_certs: False
       user: admin
       password: smartvm
