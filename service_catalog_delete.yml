@@ -9,8 +9,8 @@
       validate_certs: False
       user: admin
       password: smartvm
-      method: DELETE
-#      body: {"action":"delete"}
+      method: POST
+      body: {"action":"delete"}
       force_basic_auth: yes
       status_code: 200
       body_format: json
