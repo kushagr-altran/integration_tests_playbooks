@@ -5,7 +5,7 @@
   tasks:
   - name: Create Flavor from API.
     uri:
-      url: "https://10.18.57.58/api/providers/5/flavors"
+      url: "https://10.18.57.58/api/providers/4/flavors"
       validate_certs: False
       user: admin
       password: smartvm
