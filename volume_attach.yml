@@ -1,0 +1,20 @@
+
+---
+- name: Attach a volume to an instance 
+  hosts: 10.18.57.49
+  tasks:
+
+  - name: Launching a volume attachment operation
+    os_server_volume:
+      auth:
+        auth_url: https://10.18.54.16:13000/v3/ 
+        username: aricent
+        password: aricent@123
+        project_name: aricent
+        domain_name: default
+      state: present
+      volume: {{ volume_name }}
+      server: {{ server_name }}
+      device: /dev/vdb
+      region_name: regionOne
+      verify: false
