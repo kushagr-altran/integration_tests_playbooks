@@ -1,7 +1,7 @@
 
 ---
 - name: Attach a volume to an instance 
-  hosts: 10.18.57.49
+  hosts: all
   tasks:
 
   - name: Launching a volume attachment operation
@@ -13,8 +13,8 @@
         project_name: aricent
         domain_name: default
       state: present
-      volume: {{ volume_name }}
-      server: {{ server_name }}
+      volume: '{{ volume_name }}'
+      server: '{{ server_name }}'
       device: /dev/vdb
       region_name: regionOne
       verify: false
