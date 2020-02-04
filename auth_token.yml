@@ -1,0 +1,20 @@
+
+---
+- name: Validate credential from openstack cloud 
+  hosts: all
+  tasks:
+
+  - name: Retreive auth token from cloud
+    os_auth:
+      auth:
+        auth_url: https://10.18.54.16:13000/v3/ 
+        username: aricent
+        password: aricent@123
+        project_name: aricent
+        domain_name: default
+      validate_certs: no
+      region_name: regionOne
+  - name: Display value
+    debug:
+      var: auth_token
+
