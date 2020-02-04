@@ -2,5 +2,12 @@
   tasks:
   - name: Install a yum package in Ansible example
     yum:
-      name: '{{ package }}'
+      name: '{{ package1 }}'
       state: present
+
+
+  - name: Install a yum package in Ansible example
+    yum:
+      name: '{{ package2 }}'
+      state: present
+
