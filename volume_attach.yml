@@ -17,4 +17,4 @@
       server: '{{ server_name }}'
       device: /dev/vdb
       region_name: regionOne
-      verify: false
+      validate_certs: no
