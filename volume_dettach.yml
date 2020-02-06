@@ -1,0 +1,20 @@
+
+---
+- name: Dettach a volume to an instance 
+  hosts: all
+  tasks:
+
+  - name: Launching a volume dettachment operation
+    os_server_volume:
+      auth:
+        auth_url: https://10.18.54.16:13000/v3/ 
+        username: aricent
+        password: aricent@123
+        project_name: aricent
+        domain_name: default
+      state: absent
+      volume: '{{ volume_name }}'
+      server: '{{ server_name }}'
+      device: /dev/vdb
+      region_name: regionOne
+      validate_certs: no
